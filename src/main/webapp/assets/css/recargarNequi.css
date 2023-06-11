@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('../img/RecargarNequi/BackgroundNequi.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.logo-nequi {
+    max-width: 350px;
+    margin: 0 auto;
+    padding-top: 24px;
+    text-align: center;
+}
+
+.formulario {
+    text-align: -webkit-center;
+}
+
+form {
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 22px;
+    text-align: center;
+    width: 340px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h2 {
+    color: #454270;
+    font-size: 35px;
+}
+
+label {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+input , textarea {
+    padding: 17px 25px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    background-color: #EDFFF0;
+    border: 2px solid #454270;
+    color: #000;
+}
+
+input::placeholder, textarea::placeholder {
+    color: #454270;
+}
+
+.form-txt {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.form-txt a {
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-txt a:hover {
+    color: #f50057
+}
+
+.btn {
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+
+    font-size: 16px;
+    color: #000;
+    border: solid #454270;
+    border-radius: 25px;
+    background-color:transparent;
+    cursor: pointer;
+}
+
+.btn-rosa {
+    font-size: 16px;
+    color: #000;
+    border: solid #454270;
+    border-radius: 25px;
+    background-color: #f50057;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f50057;
+}
+
+.btn-rosa:hover {
+    color: #2fcad7;
+}
+
+/*Responsive*/
+@media (max-width:991px) {
+
+    body {
+        padding: 30px;
+    }
+
+    form {
+        padding: 50px 30px;
+        width: 100%;
+    }
+
+    input {
+        padding: 15px;
+    }
+}

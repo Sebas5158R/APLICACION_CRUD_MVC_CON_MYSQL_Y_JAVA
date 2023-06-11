@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Sen&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sen', sans-serif;
+    background-image: url('https://img.freepik.com/fotos-premium/fondo-geometrico-abstracto-puntos-lineas-conexion-fondo-digital-negro-abstracto-concepto-red-complejo-datos-grandes-renderizado-3d-compuestos_634443-516.jpg');
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 98%;
+    background: rgb(10 7 7);
+    border-radius: 10px;
+}
+
+.formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    font-size: large;
+    color: white;
+    border-bottom: 1px solid rgb(255, 251, 0);
+}
+
+.formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .tipoDoc {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+form .phone {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+form .password {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+form .numDoc {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+form .name {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.tipoDoc input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.phone input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.password input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.password .bx {
+    color: white;
+    font-size: 20px;
+    transform: translateX(-10px);
+    cursor: pointer;
+}
+
+.numDoc input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.name input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.submit button {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid wheat;
+    border-radius: 10px;
+    background: #000000;
+    color: white;
+    outline: none;
+    transition: .4s;
+}
+
+.submit button:hover {
+    background: #fffb00;
+    color: rgb(0, 0, 0);
+}
+
+.submit a {
+    text-align: center;
+    line-height: 2;
+}
+
+.submit .cancelar {
+    display: inline-block;
+    text-decoration: none;
+    width: 96%;
+    padding: 0 5px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid wheat;
+    border-radius: 10px;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    outline: none;
+    transition: .4s;
+}
+
+.submit .cancelar:hover {
+    background: #ff0000;
+    color: rgb(255, 255, 255);
+}
+
+.tipoDoc label {
+    color: #adadad;
+}
+
+.phone label {
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-30%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.password label {
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-30%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.numDoc label {
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-30%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.name label {
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-30%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.phone span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.password span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.numDoc span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.name span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.phone input:focus ~ label,
+.password input:focus ~ label,
+.numDoc input:focus ~ label,
+.name input:focus ~ label {
+    top: -5px;
+    color: #b500fd;
+}
+
+.phone input:focus ~ label,
+.password input:focus ~label,
+.numDoc input:focus ~ label,
+.name input:focus ~ label {
+    top: -5px;
+    color: #eeff00;
+}
+
+.phone input:focus ~ span::before,
+.password input:focus ~ span::before,
+.numDoc input:focus ~ label,
+.name input:focus ~ label {
+    width: 100%;
+}
+
+.borrar_cuenta {
+    float: right;
+    padding: 10px;
+    margin: 10px;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    border: 1px solid #adadad;
+    border-radius: 22px;
+    font-weight: bold;
+}
+
+.borrar_cuenta:hover {
+    background: #ff0000;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: .3s;
+}

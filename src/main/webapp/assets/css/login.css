@@ -1,0 +1,184 @@
+:root{
+    --fuente: 'Quicksand', sans-serif;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *,*::after, *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: var(--fuente);
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .contenedor {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 95%;
+  }
+  
+  .imagen-formulario {
+    background-image: url('https://i.pinimg.com/550x/7a/70/3b/7a703b259b0ce5470739b9db512555af.jpg');
+    background-position: center center;
+    height: 200px;
+    flex: 0 0 calc(60%);
+    position: relative;
+  }
+  
+  .imagen-formulario h1 {
+    padding: 10px;
+    display: flex;
+    text-align: center;
+  
+  }
+  
+  .imagen-formulario p {
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .c1 {
+    padding: 10px;
+    display: flex;
+    text-align: center
+  }
+  
+  .c2 {
+    padding: 10px;
+    display: flex;
+    text-align: center
+  }
+  
+  .c3 {
+    padding: 10px;
+    display: flex;
+    text-align: center
+  }
+  
+  .c4 {
+    padding: 10px;
+    display: flex;
+    text-align: center;
+  }
+  
+  @media(min-width:768px){
+    .imagen-formulario {
+        height: auto;
+    }
+  }
+  
+  /*Responsive*/
+  @media(min-width:768px){
+    .contenedor-formulario {
+        display: flex;
+    }
+  }
+  
+  .formulario {
+    padding: 50px;
+    background-color:#000000;
+    border-radius: 22px;
+    border: solid yellow;
+  }
+  
+  .texto-formulario h2, .input label, .password-olvidada a, .texto-formulario p{
+    color: rgb(255, 255, 255);
+  }
+  
+  .texto-formulario h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .texto-formulario p {
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .input label {
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  .password-olvidada {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .password-olvidada :hover{
+    color: #d9ff00;
+  }
+  
+  .input input {
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .input input{
+    width: 95%;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+  }
+  
+  .input input[type="submit"] {
+    background-color:#fff;
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    transition: background-color .3s ease-in-out;
+  }
+  
+  .input_password {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input_password input{
+    width: 95%;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+  }
+  
+  .bx {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transform: translateX(-35px);
+    cursor: pointer;
+  }
+  
+  .input input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(238, 255, 0);
+  }
+  
+  .registro a{
+    display: block;
+    margin: 10px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .registro a:hover {
+    color: #d9ff00;
+  }

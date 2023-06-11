@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://img.freepik.com/foto-gratis/estudio-gris-vacio-liso-abstracto-bien-uso-como-fondo-informe-comercial-digital-plantilla-sitio-web-telon-fondo_1258-55967.jpg?w=740&t=st=1682117157~exp=1682117757~hmac=fe2250f068669bd7b3268dab083fb07e6757705b281ecd98c17f8c62d9793b8d');
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;font-size: 1rem;
+}
+
+a:hover {
+    color: red;
+}
+/*Header*/
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #000000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: red;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale .2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: #fff;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/*DropDown Menu*/
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(8, 3, 3, 0.397);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*Responsive Design*/
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+}
+
+/*Slider*/
+.slider-frame {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+}
+
+.slider-frame ul {
+    display: flex;
+    animation: cambio 20s infinite;
+    padding: 0;
+    width: 300%;
+}
+
+.slider-frame li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-frame img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes cambio {
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+}
+
+.informacion img {
+    width: 30%;
+    float:left;
+}
+
+.informacion h1 {
+    display: flex;
+    font-size:large;
+    justify-content: space-around;
+    color:rgb(0, 0, 0);
+}
+
+.informacion p {
+    text-align: center;
+    padding: 9px;
+    border: 3px solid red;
+    border-radius: 22px;
+    background-color: rgb(255, 222, 209);
+    height: 110px;
+}
+
+.pedir-tarjeta h1 {
+    text-align: center;
+}
+
+.info-tarjeta img {
+    float: left;
+    width: 30%;
+}
+
+.info-tarjeta p {
+    text-align: left;
+    padding: 13px;
+    font-size: larger;
+}
+
+.tarjeta-nequi {
+    text-align: center;
+}
+
+/*Slider nequi*/
+.slider-frame-nequi {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #210049;
+
+}
+
+.slider-frame-nequi ul {
+    display: flex;
+    animation: cambio2 20s infinite;
+    padding: 0;
+    width: 300%;
+}
+
+.slider-frame-nequi li {
+    list-style: none;
+    width: 100%;
+}
+
+.slider-frame-nequi img {
+    width: 60%;
+    height: 90%;
+}
+
+@keyframes cambio2 {
+    0% {margin-left: 0%;}
+    30% {margin-left: 0%;}
+
+    35% {margin-left: -100%;}
+    70% {margin-left: -100%;}
+
+    75% {margin-left: -200%;}
+    100% {margin-left: -200%;}
+}
+
+.tarjeta-nequi img {
+    width: 280px;
+    height: 240px;
+    border-radius: 22px;
+}
+
+.tarjeta-nequi h2 {
+    font-size: 1.188rem;
+    line-height: 1.5rem;
+    color: #4376ff;
+}
+
+.tarjeta-nequi h3 {
+    margin-bottom: 0;
+    font-size: 1.938rem;
+    line-height: 2rem;
+    color: #4376ff;
+}
+
+.tarjeta-nequi {
+    display: block;
+}
+
+.tarjeta-nequi p {
+    color: #210049;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+.boton-tarjeta-nequi {
+    color: #fff;
+    margin: 10px;
+    width: 252px;
+    height: 56px;
+    text-align: center;
+    -webkit-text-fill-color: inherit;
+    background-color: #3898ec;
+    background-clip: border-box;
+    border-radius: 32px;
+    margin-top: 24px;
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.5rem;
+    text-decoration: none;
+    display: block;
+    display: inline-block;
+}
+
+.boton-tarjeta-nequi:hover {
+    color: #210049;
+}

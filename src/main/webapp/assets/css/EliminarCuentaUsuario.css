@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Sen&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sen', sans-serif;
+    background-image: url('https://img.freepik.com/fotos-premium/fondo-geometrico-abstracto-puntos-lineas-conexion-fondo-digital-negro-abstracto-concepto-red-complejo-datos-grandes-renderizado-3d-compuestos_634443-516.jpg');
+    height: 100vh;
+}
+
+.formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 42%;
+    background: rgb(10 7 7);
+    border-radius: 10px;
+}
+
+.formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    font-size: large;
+    color: white;
+    border-bottom: 1px solid rgb(255, 251, 0);
+}
+
+.formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .numDoc {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.numDoc input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.submit button {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid wheat;
+    border-radius: 10px;
+    background: #000000;
+    color: white;
+    outline: none;
+    transition: .4s;
+}
+
+.submit button:hover {
+    background: #ff0000;
+    color: rgb(255, 255, 255);
+}
+
+.submit a {
+    text-align: center;
+    line-height: 2;
+}
+
+.submit .cancelar {
+    display: inline-block;
+    text-decoration: none;
+    width: 96%;
+    padding: 0 5px;
+    height: 35px;
+    font-size: 16px;
+    border: 1px solid wheat;
+    border-radius: 10px;
+    background: #000000;
+    color: rgb(255, 255, 255);
+    outline: none;
+    transition: .4s;
+}
+
+.submit .cancelar:hover {
+    background: #146600;
+    color: rgb(255, 255, 255);
+}
+
+.numDoc label {
+    position: absolute;
+    top: -5%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-30%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.numDoc span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #6C3483;
+    transition: .5s;
+}
+
+.numDoc input:focus ~ label {
+    top: -5px;
+    color: #eeff00;
+}

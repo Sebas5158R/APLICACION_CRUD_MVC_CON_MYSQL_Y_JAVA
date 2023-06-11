@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://img.freepik.com/foto-gratis/estudio-gris-vacio-liso-abstracto-bien-uso-como-fondo-informe-comercial-digital-plantilla-sitio-web-telon-fondo_1258-55967.jpg?w=740&t=st=1682117157~exp=1682117757~hmac=fe2250f068669bd7b3268dab083fb07e6757705b281ecd98c17f8c62d9793b8d');
+    background-size: cover;
+    background-position: center;
+}
+
+.title {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.texto h3 {
+    text-align: center;
+}
+
+.logos {
+    padding: auto;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    column-gap: 10rem;
+}
+
+.eleccion {
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    column-gap: 11rem;
+}
+
+.eleccion a {
+    width: 18%;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+}
+
+.eleccion a [type="submit"] {
+    background-color:#fff;
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    transition: background-color .3s ease-in-out;
+}
+
+.eleccion a[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(98, 0, 255);
+}
+
+.eleccion a [type="submit2"] {
+    background-color:#fff;
+    color: #000000;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    transition: background-color .3s ease-in-out;
+}
+
+.eleccion a[type="submit2"]:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+}
+
+a .nequi {
+    border: 1px solid #210049;
+}
+
+a .daviplata {
+    border: 1px solid red;
+}
+
+.pie-pagina {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    font-weight: bold;
+    width: 100%;
+    height: 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 6px;
+}
