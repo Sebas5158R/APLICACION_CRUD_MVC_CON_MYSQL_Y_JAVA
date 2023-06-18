@@ -9,13 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.DaviplataDao;
+import model.DaviplataVo;
+import model.NequiDao;
+import model.NequiVo;
 import model.UsuarioDao;
 import model.UsuarioVo;
 
 public class Usuario extends HttpServlet{
+    // invocación de las clases Dao y Vo pero de Daviplata
+    DaviplataVo daviVo = new DaviplataVo();
+    DaviplataDao daviDao = new DaviplataDao();
+
+    // invocación de las clases Dao y Vo pero de nequi
+    NequiDao nequiDao = new NequiDao();
+    NequiVo nequiVo = new NequiVo(); 
+
     //Invocación de las clases Dao y Vo
     UsuarioVo userVo = new UsuarioVo();
     UsuarioDao userDao = new UsuarioDao();
+
 
     // Método DoGet para enviar a las vistas
     @Override
@@ -103,12 +116,16 @@ public class Usuario extends HttpServlet{
         }
         if (req.getParameter("phone") != null) {
             userVo.setCelular(req.getParameter("phone"));
+            nequiVo.setCelular(req.getParameter("phone"));
+            daviVo.setCelular(req.getParameter("phone"));
         }
         if (req.getParameter("password") != null) {
             userVo.setContraseña(req.getParameter("password"));
         }
         try {
-            userDao.registrar(userVo);
+            userDao.registrar(userVo); //Registrar usuario
+            nequiDao.registrarNequi(nequiVo); //Registrar cuenta de nequi
+            daviDao.registrarDaviplata(daviVo); //Registrar cuenta de daviplata
             System.out.println("Registro insertado correctamente");
             listar(req, resp);
         } catch (Exception e) {

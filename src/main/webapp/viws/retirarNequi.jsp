@@ -18,7 +18,7 @@
 
         <div class="form__container">
             <div class="form__group">
-                <input type="text" name="retirar" id="cantidad" class="form__input" placeholder=" " required>
+                <input type="text" name="cantidad" id="cantidad" class="form__input" placeholder=" " required>
                 <label for="retirar" class="form__label">Cantidad:</label>
                 <span class="form__line"></span>
             </div>
@@ -26,7 +26,7 @@
 
         <div class="form__container">
             <div class="form__group">
-                <input type="text" id="phone" class="form__input" placeholder=" ">
+                <input type="text" name="phone" id="phone" class="form__input" placeholder=" ">
                 <label for="phone" class="form__label">Cuenta (De que cuenta o número):</label>
                 <span class="form__line"></span>
             </div>

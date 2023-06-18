@@ -39,7 +39,7 @@
                         <br>
                             <p>Tu saldo es de: </p>
                             <div class="saldo">
-                                <p>$<%=request.getAttribute("recargaDavi")%></p>
+                                <p>${saldoDavi}</p>
                             </div>
                             <br>
                         </div>

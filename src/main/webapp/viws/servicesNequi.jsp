@@ -64,9 +64,7 @@
                     <div>
                         <div class="num-saldo">
                             <span font-size="40px" font-weight="400">
-                                <p>
-                                    $<%=request.getAttribute("recarga")%>
-                                </p>
+                                <p>${saldo}</p>
                             </span>
                         </div>
                         <div style="margin-bottom:7px">

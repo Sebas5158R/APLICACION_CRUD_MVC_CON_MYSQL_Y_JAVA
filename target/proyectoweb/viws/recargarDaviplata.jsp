@@ -27,8 +27,8 @@
                 <h3>Recarga:</h3>
                 <form action="bolsillo" method="post">
                     <p>
-                        <label>Cuenta:</label>
-                        <input type="number" name="cuenta">
+                        <label for="cel">Cuenta:</label>
+                        <input type="number" name="cel">
                     </p>
                     <p>
                         <label>Confirma la cuenta:</label>

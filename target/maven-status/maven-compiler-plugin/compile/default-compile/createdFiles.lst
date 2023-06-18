@@ -1,8 +1,0 @@
-bolsilloDigital\Bolsillo.class
-model\UsuarioVo.class
-bolsilloDigital\Nequi.class
-model\UsuarioDao.class
-bolsilloDigital\Daviplata.class
-controller\Bolsillo.class
-controller\Usuario.class
-model\Conexion.class
