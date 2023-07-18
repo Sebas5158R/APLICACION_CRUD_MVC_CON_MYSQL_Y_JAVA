@@ -108,17 +108,81 @@ public class UsuarioDao {
     }
 
 
-    // Conexión para editar información del usuario
-    public int editarUsuario(UsuarioVo usuario) throws SQLException {
-        sql = "update usuario set TipoDocumento =?, Celular =?, Contraseña=? where NumeroDocumento = ? and NombreUsuario = ?";
+    // editar por id
+    public List<UsuarioVo> listarUsuarios(int id) throws SQLException {
+        List <UsuarioVo> usuario = new ArrayList<>();
+        sql = "select * from usuario where IdUsuario = ?";
+
         try {
             con = Conexion.conectar();
             ps = con.prepareStatement(sql);
-            ps.setString(1, usuario.getTipoDocumento());
-            ps.setString(2, usuario.getCelular());
-            ps.setString(3, usuario.getContraseña());
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while(rs.next()) {
+                UsuarioVo userVo = new UsuarioVo();
+                userVo.setIdUsuario(rs.getInt("IdUsuario"));
+                userVo.setNombreUsuario(rs.getString("NombreUsuario"));
+                userVo.setApellidoUsuario(rs.getString("ApellidoUsuario"));
+                userVo.setTipoDocumento(rs.getString("TipoDocumento"));
+                userVo.setNumeroDocumento(rs.getString("NumeroDocumento"));
+                userVo.setCelular(rs.getString("Celular"));
+                userVo.setContraseña(rs.getString("Contraseña"));
+                usuario.add(userVo);
+            }
+            ps.close();
+        }
+        finally {
+            con.close();
+        }
+        return usuario;
+    }
+
+
+    // borrar por id
+    public List<UsuarioVo> borrarUsuarios(int id) throws SQLException {
+        List <UsuarioVo> usuario = new ArrayList<>();
+        sql = "select * from usuario where IdUsuario = ?";
+
+        try {
+            con = Conexion.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            rs = ps.executeQuery();
+
+            while(rs.next()) {
+                UsuarioVo userVo = new UsuarioVo();
+                userVo.setIdUsuario(rs.getInt("IdUsuario"));
+                userVo.setNombreUsuario(rs.getString("NombreUsuario"));
+                userVo.setApellidoUsuario(rs.getString("ApellidoUsuario"));
+                userVo.setTipoDocumento(rs.getString("TipoDocumento"));
+                userVo.setNumeroDocumento(rs.getString("NumeroDocumento"));
+                userVo.setCelular(rs.getString("Celular"));
+                userVo.setContraseña(rs.getString("Contraseña"));
+                usuario.add(userVo);
+            }
+            ps.close();
+        }
+        finally {
+            con.close();
+        }
+        return usuario;
+    }
+
+
+    // Conexión para editar información del usuario
+    public int editarUsuario(UsuarioVo usuario) throws SQLException {
+        sql = "update usuario set NombreUsuario =?, ApellidoUsuario =?, TipoDocumento=?, NumeroDocumento=?, Celular=?, Contraseña=? where IdUsuario=?";
+        try {
+            con = Conexion.conectar();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, usuario.getNombreUsuario());
+            ps.setString(2, usuario.getApellidoUsuario());
+            ps.setString(3, usuario.getTipoDocumento());
             ps.setString(4, usuario.getNumeroDocumento());
-            ps.setString(5, usuario.getNombreUsuario());
+            ps.setString(5, usuario.getCelular());
+            ps.setString(6, usuario.getContraseña());
+            ps.setInt(7, usuario.getIdUsuario());
             System.out.println(ps);
             ps.executeUpdate();
             ps.close();
@@ -136,11 +200,11 @@ public class UsuarioDao {
 
     // Conexión para eliminar la cuenta del usuario
     public int eliminarUsuario (UsuarioVo usuario) throws SQLException {
-        sql = "delete from usuario where NumeroDocumento =?";
+        sql = "delete from usuario where IdUsuario =?";
         try {
             con = Conexion.conectar();
             ps = con.prepareStatement(sql);
-            ps.setString(1, usuario.getNumeroDocumento());
+            ps.setInt(1, usuario.getIdUsuario());
             System.out.println(ps);
             ps.executeUpdate();
             ps.close();

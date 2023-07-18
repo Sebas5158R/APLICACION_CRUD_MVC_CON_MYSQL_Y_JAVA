@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,50 +17,50 @@
     <div class="formulario">
         <h1>Acá puedes editar los usuarios</h1>
 
-        <!-- Solo se puede editar el tipo de documento, el número de celular y la contraseña -->
-
         <form action="usuario" method="post" onsubmit="return validar();">
-            <div class="tipoDoc">
-                <label for="tipoDoc">Tipo de documento</label>
-                <select name="tipoDoc">
-                    <option>Cedula de ciudadania</option>
-                    <option>Tarjeta de identidad</option>
-                    <option>Pasaporte</option>
-                </select>
-            </div>
-            <div class="phone">
-                <input type="number" name="phone">
-                <label for="phone">Número celular</label>
-            </div>
-            <div class="password">
-                <input type="password" name="password" id="password">
-                <i class='bx bx-show-alt'></i>
-                <label for="password">Contraseña</label>
-            </div>
-
-            <h1>Confirma los siguientes datos para poder continuar con el proceso</h1>
-
-            <!-- Para cambiar los datos se necesita confirmar el número de documento y el nombre del
-                 que se le va a editar la información -->
-                 
-            <div class="numDoc">
-                <input type="number" name="numDoc" id="numDoc">
-                <label for="numDoc">Número de documento</label>
-            </div>
-            <div class="name">
-                <input type="text" name="nombre" id="nombre">
-                <label for="nombre">Nombre</label>
-            </div>
-            <div class="submit">
-                <button type="submit" name="accion" value="editUser">Confirmar</button>
-                <br><br>
-                <a class="cancelar" href="usuario?accion=cancelar">Cancelar</a>
-            </div>
+            <c:forEach var = "usuario" items = "${usuario}">
+                <div class="name">
+                    <input type="text" name="nombre" id="nombre" value="${usuario.getNombreUsuario()}">
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="apellido">
+                    <input type="text" name="apellido" id="apellido" value="${usuario.getApellidoUsuario()}"
+                    <label for="apellido">Apellido</label>
+                </div>
+                <div class="tipoDoc">
+                    <label for="tipoDoc">Tipo de documento</label>
+                    <select name="tipoDoc">
+                        <option>Cedula de ciudadania</option>
+                        <option>Tarjeta de identidad</option>
+                        <option>Pasaporte</option>
+                    </select>
+                </div>
+                <div class="numDoc">
+                    <input type="number" name="numDoc" id="numDoc" value="${usuario.getNumeroDocumento()}">
+                    <label for="numDoc">Número de documento</label>
+                </div>
+                <div class="phone">
+                    <input type="number" name="phone" value="${usuario.getCelular()}">
+                    <label for="phone">Número celular</label>
+                </div>
+                <div class="password">
+                    <input type="password" name="password" id="password" value="${usuario.getContraseña()}">
+                    <i class='bx bx-show-alt'></i>
+                    <label for="password">Contraseña</label>
+                </div>
+                
+                <div class="submit">
+                    <button type="submit" name="accion" value="editUser" onclick="alert('Se actualizo con éxito')">Confirmar</button>
+                    <br><br>
+                    <a class="cancelar" href="usuario?accion=cancelar">Cancelar</a>
+                </div>
+            </c:forEach>
         </form>
     </div>
 
-    <a class="borrar_cuenta" href="usuario?accion=borrar">Eliminar cuenta</a>
-
+    <c:forEach var = "usuario" items = "${usuario}">
+        <a class="borrar_cuenta" href="usuario?accion=borrar&idUsuario=${usuario.getIdUsuario()}">Eliminar cuenta</a>
+    </c:forEach>
 
     <!-- Archivos JavaScript -->
     <script src="assets/js/editar.js"></script>

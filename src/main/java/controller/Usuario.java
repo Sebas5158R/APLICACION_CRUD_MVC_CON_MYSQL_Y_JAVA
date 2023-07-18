@@ -50,11 +50,11 @@ public class Usuario extends HttpServlet{
                 break;
 
             case "editar":
-                editar(req, resp);
+                editarUsuario(req, resp);
                 break;
 
             case "borrar":
-                req.getRequestDispatcher("viws/EliminarCuentaUsuario.jsp").forward(req, resp);
+                eliminarUsuario(req, resp);
                 break;
         }
     }
@@ -147,41 +147,45 @@ public class Usuario extends HttpServlet{
     }
 
 
-    //Método para enviar a editar información de un usuario
-    private void editar(HttpServletRequest req, HttpServletResponse resp) {
+    // Método para enviar a editar un usuario
+    private void editarUsuario(HttpServletRequest req, HttpServletResponse resp) {
         try {
+            userVo.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
+            List usuario = userDao.listarUsuarios(userVo.getIdUsuario());
+            req.setAttribute("usuario", usuario);
             req.getRequestDispatcher("viws/usuarioEdit.jsp").forward(req, resp);
+            System.out.println("Usuario listo para editar");
         }
-        catch (Exception e) {
-            System.out.println("No se puede editar al usuario porque "+e.getMessage().toString());
+        catch(Exception e) {
+            System.out.println("Hay problemas al listar al usuario para editar "+e.getMessage().toString());
         }
     }
 
 
     //Método para editar la información de un usuario
     private void editUser(HttpServletRequest req, HttpServletResponse resp) {
-        if (req.getParameter("tipoDoc") != null) {
-            userVo.setTipoDocumento(req.getParameter("tipoDoc"));
-        }
-   
-        if (req.getParameter("phone") != null) {
-            userVo.setCelular(req.getParameter("phone"));
-        } else {
-            userVo.getCelular();
-        }
-
-        if (req.getParameter("password") != null) {
-            userVo.setContraseña(req.getParameter("password"));
-        } else {
-            userVo.getContraseña();
-        }
-        // Confirmar
-        if (req.getParameter("numDoc") != null) {
-            userVo.setNumeroDocumento(req.getParameter("numDoc"));
-        }
         if (req.getParameter("nombre") != null) {
             userVo.setNombreUsuario(req.getParameter("nombre"));
         }
+        if(req.getParameter("apellido") != null) {
+            userVo.setApellidoUsuario(req.getParameter("apellido"));
+        }
+        if (req.getParameter("tipoDoc") != null) {
+            userVo.setTipoDocumento(req.getParameter("tipoDoc"));
+        }
+        if (req.getParameter("numDoc") != null) {
+            userVo.setNumeroDocumento(req.getParameter("numDoc"));
+        }
+        if (req.getParameter("phone") != null) {
+            userVo.setCelular(req.getParameter("phone"));
+        }
+        if (req.getParameter("password") != null) {
+            userVo.setContraseña(req.getParameter("password"));
+        }
+        if (req.getParameter("idUsuario") != null) {
+            userVo.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
+        }
+
         try {
             userDao.editarUsuario(userVo);
             System.out.println("Se actualizaron los datos correctamente");
@@ -193,15 +197,30 @@ public class Usuario extends HttpServlet{
     }
 
 
+    // Método para enviar a editar un usuario
+    private void eliminarUsuario(HttpServletRequest req, HttpServletResponse resp) {
+        try {
+            userVo.setIdUsuario(Integer.parseInt(req.getParameter("idUsuario")));
+            List usuario = userDao.borrarUsuarios(userVo.getIdUsuario());
+            req.setAttribute("usuario", usuario);
+            req.getRequestDispatcher("viws/EliminarCuentaUsuario.jsp").forward(req, resp);
+            System.out.println("Usuario listo para borrar");
+        }
+        catch(Exception e) {
+            System.out.println("Hay problemas al listar al usuario para borrar "+e.getMessage().toString());
+        }
+    }
+
+
     //Método para eliminar a algún usuario.
     private void delete (HttpServletRequest req, HttpServletResponse resp) {
-        if (req.getParameter("numDoc") != null) {
-            userVo.setNumeroDocumento(req.getParameter("numDoc"));
+        if (req.getParameter("idUsuario") != null) {
+            userVo.setNumeroDocumento(req.getParameter("idUsuario"));
         }
         try {
             userDao.eliminarUsuario(userVo);
             System.out.println("La cuenta se elimino");
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
+            listar(req, resp);
         }
         catch (Exception e) {
             System.out.println("Error al tratar de borrar la cuenta "+e.getMessage().toString());

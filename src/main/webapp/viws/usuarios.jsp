@@ -28,7 +28,7 @@
                     <td data-label="numDoc">${usuario.getNumeroDocumento()}</td>
                     <td data-label="phone">${usuario.getCelular()}</td>
                     <td data-label="contraseña">${usuario.getContraseña()}</td>
-                    <td data-label="Acciones"><a href="usuario?accion=editar" class="btn">Editar</a></td>
+                    <td data-label="Acciones"><a href="usuario?accion=editar&idUsuario=${usuario.getIdUsuario()}" class="btn">Editar</a></td>
                 </tr>
             </tbody>
         </c:forEach>

@@ -7,7 +7,7 @@ public class Conexion {
     //Variables para hacer la conexión
     private static final String bbdd = "jdbc:mysql://localhost:3306/bolsillo";
     private static final String usuario = "root";
-    private static final String clave = "200530";
+    private static final String clave = "";
     private static Connection conexion;
 
     //Decalarar método para la conexión

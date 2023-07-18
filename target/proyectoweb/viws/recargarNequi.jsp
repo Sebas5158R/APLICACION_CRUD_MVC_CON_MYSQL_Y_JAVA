@@ -23,7 +23,7 @@
             <br>
             <div class="input-group">
                 <label for="phone">Cuenta a recargar</label>
-                <input type="number" name="phone" id="phone" placeholder="Número de celular">
+                <input type="number" name="phone" id="phone" value="">
                 <input type="number" name="confirm-phone" id="confirm-phone" placeholder="Confirma número celular">
                 <br>
                 <label for="cantidad">Cantidad</label>

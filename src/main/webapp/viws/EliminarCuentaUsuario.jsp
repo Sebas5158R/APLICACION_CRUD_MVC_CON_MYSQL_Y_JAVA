@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,16 +14,18 @@
 <body>
     <div class="formulario">
         <form action="usuario" method="post" onsubmit="return validar();">
-            <h1>Eliminar cuenta</h1>
+            <c:forEach var = "usuario" items = "${usuario}">
+                <h1>Eliminar cuenta</h1>
             <div class="numDoc">
-                <input type="number" name="numDoc" id="numDoc">
-                <label for="delete">Número de documento</label>
+                <input type="number" name="idUsuario" id="idUsuario" value="${usuario.getIdUsuario()}">
+                <label for="delete">Id Usuario</label>
             </div>
             <div class="submit">
-                <button type="submit" name="accion" value="delete">Borrar</button>
+                <button type="submit" name="accion" value="delete" onclick="alert('Se elimino satisfactoriamente al usuario')">Borrar</button>
                 <br><br>
                 <a class="cancelar" href="usuario?accion=cancelar">Cancelar</a>
             </div>
+            </c:forEach>
         </form>
     </div>
 
