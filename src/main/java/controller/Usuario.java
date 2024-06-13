@@ -104,6 +104,8 @@ public class Usuario extends HttpServlet{
     private void add(HttpServletRequest req, HttpServletResponse resp) {
         if (req.getParameter("nombre") != null) {
             userVo.setNombreUsuario(req.getParameter("nombre"));
+            nequiVo.setNombreUsuario(req.getParameter("nombre"));
+            daviVo.setNombreUsuario(req.getParameter("nombre"));
         }
         if (req.getParameter("apellido") != null) {
             userVo.setApellidoUsuario(req.getParameter("apellido"));

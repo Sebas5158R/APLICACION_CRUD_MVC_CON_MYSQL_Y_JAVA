@@ -4,15 +4,17 @@ public class DaviplataVo {
     private int idDaviplata;
     private double saldo;
     private String celular;
+    private String nombreUsuario;
 
     public DaviplataVo() {
 
     }
 
-    public DaviplataVo(int idDaviplata, double saldo, String celular) {
+    public DaviplataVo(int idDaviplata, double saldo, String celular, String nombreUsuario) {
         this.idDaviplata = idDaviplata;
         this.saldo = saldo;
         this.celular = celular;
+        this.nombreUsuario = nombreUsuario;
     }
 
     public int getIdDaviplata() {
@@ -38,6 +40,16 @@ public class DaviplataVo {
     public void setCelular(String celular) {
         this.celular = celular;
     }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    
 
     
 }

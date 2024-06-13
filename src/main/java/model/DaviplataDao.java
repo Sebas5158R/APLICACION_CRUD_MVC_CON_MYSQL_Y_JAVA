@@ -15,12 +15,13 @@ public class DaviplataDao {
 
     // Para registrar
     public int registrarDaviplata(DaviplataVo daviplata) throws SQLException {
-        sql = "insert into daviplata (CantidadSaldo, Celular) values (0, ?)";
+        sql = "insert into daviplata (CantidadSaldo, NombreUsuario, Celular) values (0, ?, ?)";
 
         try {
             con = Conexion.conectar();
             ps = con.prepareStatement(sql);
-            ps.setString(1, daviplata.getCelular());
+            ps.setString(1, daviplata.getNombreUsuario());
+            ps.setString(2, daviplata.getCelular());
             System.out.println(ps);
             ps.executeUpdate();
             ps.close();

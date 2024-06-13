@@ -15,11 +15,12 @@ public class NequiDao {
 
     // Para registrar Nequi
     public int registrarNequi(NequiVo nequi) throws SQLException {
-        sql = "insert into nequi (CantidadSaldo, Celular) values (0, ?)";
+        sql = "insert into nequi (Celularfk, NombreUsuario, CantidadSaldo) values (?, ?, 0)";
         try {
             con = Conexion.conectar();
             ps = con.prepareStatement(sql);
             ps.setString(1, nequi.getCelular());
+            ps.setString(2, nequi.getNombreUsuario());
             System.out.println(ps);
             ps.executeUpdate();
             ps.close();
@@ -37,7 +38,7 @@ public class NequiDao {
 
     // Conexión para recargar Nequi
     public int recargar(NequiVo nequi ) throws SQLException {
-        sql = "update nequi set CantidadSaldo = CantidadSaldo + ? where Celular = ?";
+        sql = "update nequi set CantidadSaldo = CantidadSaldo + ? where Celularfk = ?";
 
         try {
             con = Conexion.conectar();
